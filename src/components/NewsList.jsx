@@ -3,12 +3,12 @@ import NewsItem from "./NewsItem"
 const NewsList = ({ articles }) => {
     console.log(articles)
     return (
-        <div>
+        <ul>
             {articles.map((article, index) => (
                 <NewsItem key={index} article={article}/>
 
             ))}
-        </div>
+        </ul>
     )
 }
 

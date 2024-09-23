@@ -1,10 +1,10 @@
 const NewsItem = ({ article }) => {
     
     return (
-      <div>
+      <li className='newsItem'>
         <h2>{article.title}</h2>
         <p>{article.description}</p>
-      </div>
+      </li>
     )
 }
 
