@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Switch from "./components/Switch"
 import Header from './components/Header'
 import NewsList from './components/NewsList'
 import getTopHeadLines from './services/newsService'
@@ -6,20 +7,25 @@ import getTopHeadLines from './services/newsService'
 
 function App() {
   const [articles, setArticles] = useState([])
- 
+  const [value, setValue] = useState(false);
+
   useEffect(() => {
     getTopHeadLines()
       .then(initialArticles => {
         setArticles(initialArticles)
       })
   }, [])
-    console.log(articles)
+  console.log(articles)
 
   return (
     <>
       <Header />
-      <NewsList 
-        articles={articles} 
+      <Switch
+        isOn={value}
+        handleToggle={() => setValue(!value)}
+      />
+      <NewsList
+        articles={articles}
       />
     </>
   )
