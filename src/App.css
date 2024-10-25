@@ -1,5 +1,13 @@
-body {
+/* .light-mode {
     background-color: rgb(253, 253, 253);
+}
+
+.dark-mode {
+    background-color: darkslategray;
+} */
+
+body {
+    background-color: rgb(136, 97, 97);
 }
 
 h1 {

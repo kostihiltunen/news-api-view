@@ -5,9 +5,11 @@ import NewsList from './components/NewsList'
 import getTopHeadLines from './services/newsService'
 
 
+
 function App() {
   const [articles, setArticles] = useState([])
-  const [value, setValue] = useState(false);
+  const [toggleValue, setValue] = useState(false);
+
 
   useEffect(() => {
     getTopHeadLines()
@@ -18,16 +20,17 @@ function App() {
   console.log(articles)
 
   return (
-    <>
+    <div className="app">
       <Header />
       <Switch
-        isOn={value}
-        handleToggle={() => setValue(!value)}
+        isOn={toggleValue}
+        onColor="#06D6A0"
+        handleToggle={() => setValue(!toggleValue)}
       />
       <NewsList
         articles={articles}
       />
-    </>
+    </div>
   )
 }
 
